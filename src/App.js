@@ -1,10 +1,10 @@
 import React from 'react';
 import FileUpload from './components/FileUpload';
+import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <h1>DOC to HTML Converter</h1>
+    <div className="container">
       <FileUpload />
     </div>
   );

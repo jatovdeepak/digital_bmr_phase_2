@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
+/* Color Definitions */
+:root {
+  --dark-background: #f5e4d8; /* Light beige for background */
+  --light-coral: #f08080; /* Coral color for accents */
+  --dark-text: #333333; /* Dark text color */
+  --form-background: #ffffff; /* Form input background */
+  --input-border: #dddddd; /* Light border for inputs */
+  --button-gradient: linear-gradient(135deg, #4b3b67, #b38ca6); /* Gradient for button */
+  --hover-button: #ff3e7f; /* Hover state for button */
+  --border-radius: 10px; /* Consistent border radius */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Full height and width styling */
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Ubuntu', sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Main container styling */
+.container {
+  display: flex;
+  padding: 10px;
+  padding-bottom: 30px;
+  background-color: var(--dark-background);
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  height: 100vh; /* Ensure full viewport height */
+  overflow: hidden;
+  gap: 10px;
+}
+
+/* Left section styling */
+.left-section {
+  width: 350px;
+  background-color: var(--light-coral);
+  padding: 20px;
+  border-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px; /* Add consistent space between elements */
 }
 
-.App-link {
-  color: #61dafb;
+.left-section h1 {
+  color: var(--form-background);
+  font-size: 2em;
+  margin-bottom: 60px; /* Reduce space after heading */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.left-section h3 {
+  color: var(--form-background);
+  margin-bottom: 5px; /* Reduce space after subheading */
+}
+
+.left-section input[type="file"] {
+  padding: 10px;
+  background-color: var(--form-background);
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+}
+
+.left-section select {
+  padding: 10px;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--input-border);
+  background-color: var(--form-background);
+  color: var(--dark-text);
+  font-size: 1em;
+  margin-bottom: 10px; /* Reduce space after select input */
+}
+
+.left-section button {
+  padding: 10px;
+  background: var(--button-gradient);
+  border: none;
+  border-radius: var(--border-radius);
+  color: var(--form-background);
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 30px;
+}
+
+.left-section button:hover {
+  background-color: var(--hover-button);
+}
+
+/* Right section styling */
+.right-section {
+  flex: 1;
+  background-color: var(--form-background);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  overflow-y: auto;
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.right-section h3 {
+  font-size: 1.4em;
+  margin-bottom: 20px;
+  color: var(--dark-text);
+}
+
+.right-section div {
+  background-color: var(--form-background);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  color: var(--dark-text);
+  overflow-y: auto;
+}
+
+#nocontent {
+  color: #888888;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  .left-section,
+  .right-section {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .left-section {
+    justify-content: flex-start;
+    padding: 20px;
   }
 }
